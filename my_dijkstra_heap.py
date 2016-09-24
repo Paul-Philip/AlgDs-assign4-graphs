@@ -1,6 +1,5 @@
 # Author:   Paul-Philip Mosulet
-# Date:     23/9-2016
-
+# Date:     24/9-2016
 from math import floor
 
 
@@ -59,13 +58,13 @@ def up_heap(heap, n, vertices):
         parent = int(floor(n-1/ 2))
 
 
-def update_distance(heap, vertex, distance, vertices):
-    heap[vertices[vertex]] = (vertex, distance)  # change previous vertex here
+def update_distance(heap, vertex, distance, vertices, previous_vertex):
+    heap[vertices[vertex]] = (vertex, distance, previous_vertex)  # change previous vertex here
     up_heap(heap, vertices[vertex], vertices)
 
 
-def push(heap, vertex, distance, vertices):
-    heap.append((vertex, distance))  # add previous vertex here :P
+def push(heap, vertex, distance, vertices, previous_vertex):
+    heap.append((vertex, distance, previous_vertex))  # add previous vertex here :P
     n = len(heap)
     vertices[vertex] = n - 1
     if n > 1:

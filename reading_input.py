@@ -1,5 +1,6 @@
 # Author:   Paul-Philip Mosulet
-# Date:     23/9-2016
+# Date:     24/9-2016
+
 
 def read_next(vertices_input):
     """
@@ -32,18 +33,18 @@ def read_vertices():
     return vertices
 
 
-def add_edge(vertice_1, vertice_2, weight, adjacency_list):
+def add_edge(vertex_1, vertex_2, weight, adjacency_list):
     """
     Adds the edge to the adjacency list
     """
-    adjacency_list[int(vertice_1)].append((int(vertice_2), float(weight)))
-    adjacency_list[int(vertice_2)].append((int(vertice_1), float(weight)))
+    adjacency_list[int(vertex_1)].append((int(vertex_2), float(weight)))
+    adjacency_list[int(vertex_2)].append((int(vertex_1), float(weight)))
 
 
 def read_edges():
     """
     Reads the input edges from edges.txt on the format:
-    <vertice1> <vertice2> <weight> "TOLL"(optional)
+    <vertex1> <vertex2> <weight> "TOLL"(optional)
 
     Where the vertices are in range 0-6104.
     :return: adjacency list representation of the graph.
